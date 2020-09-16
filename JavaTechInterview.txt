@@ -1,0 +1,145 @@
+1.  Java 8 Streams
+2.  Functional interface – Function, Predicate, Supplier, Consumer
+3.  Sorting streams using sorted method
+4.  Flatmap
+
+5.  Create a list using  "knowledge","little","kingdom","knock","laptop" using stream and lamda filter the element which start with k
+
+public static void filterUsingStream() {
+		
+		//Initialize a list
+		List<String> list=Arrays.asList("knowledge","little","kingdom","knock","laptop");
+		
+		//using stream and lambda filter the array element which String start with k
+		List<String> kList=list.stream().filter(n->n.startsWith("k")).collect(Collectors.toList());
+		
+		System.out.println("Word Start with K:"+kList);
+	}
+
+6.  Can we create an instance variable in static block using static reference variable?
+
+7.  JPA vs Hibernate
+8.  Hibernate field’s datatype conversion. For ex- date format conversion using hibernate feature
+
+9.  @ControllerAdvice , @Exceptionhandling.
+
+10. In Generics,  How to create a class with accept only Employee class object ? and how it can accept all subclass of Employee class?
+
+11. What are @Repository, @Controller and @Service ?
+12. How to secure Restful web service ?
+13. Security implementation in Rest end point
+14. REST security – creating JWT tokens
+15. Spring – How JWT tokens are validated
+16. In rest API, how to define response type(JSON, XMl ) ? how one API will response xml to one client and JSON to another ?
+
+17. Spring Annotation used in Restful web service ?
+18. Difference between Controller and Rest Controller in Spring ?
+19.   What is difference between filter and interceptor ?
+20.   What are @Repository, @Controller and @Service ?
+21.   How to secure Restful web service 
+22.   Filter and interceptors
+
+23. There is one class :
+public class HelloWorld{
+
+     public static void main(String []args){
+      System.out.println("Hello World");
+      HelloWorld h1 = new HelloWorld() ;
+      HelloWorld h2 = new HelloWorld() ;
+      System.out.println(h1 == h2) ; 
+      System.out.println(h1 == h1) ;
+      System.out.println(h1.equals(h2)) ;
+      System.out.println(h2.equals(h2)) ;
+     }
+}
+
+  What will be the output ?
+
+
+24. public class HelloWorld{
+
+    public static void main(String[] args) {
+                                Animal a =  new Cat();
+                                System.out.println(a.i); //10||//20
+                }
+}
+
+class Animal {
+int i=10;
+}
+
+class Cat extends Animal {
+int i = 20;
+}
+
+25.
+package com.java.core;
+
+public class StaticBlock {
+ static StaticClassCustom obj;
+ 
+ static {
+   obj =new StaticClassCustom();
+ }
+ 
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+
+ }
+
+}
+
+
+class StaticClassCustom
+{
+ int i;
+ String aname;
+}
+
+26. Find out joining year wise maximum salary.
+
+select year(e.hire_date) joiningyear, max(s.salary) avgsalary
+from employees e, salaries s
+where e.emp_no = s.emp_no
+group by year(e.hire_date);
+
+27. Reverse string without using inbuild String method. 
+
+public class StringReverseWithoutUsingInbuiltFunction {
+    public static void main(String[] args) {
+        String str = "Pankaj Kumar";
+        char chars[] = str.toCharArray();  // converted to character array and printed in reverse order
+        for(int i= chars.length-1; i>=0; i--) {
+            System.out.print(chars[i]);
+        }
+    }
+}
+
+28.  Remove Whitespaces from String
+class RemoveWhiteSpaces
+{
+    public static void main(String[] args)
+    {
+        String str1 = "Pankaj   Kumar        is an  dev eloper Engi ne      er";
+  
+        char[] chars = str1.toCharArray();
+  
+        StringBuffer sb = new StringBuffer();
+  
+        for (int i = 0; i < chars.length; i++)
+        {
+            if( (chars[i] != ' ') && (chars[i] != '\t') )
+            {
+                sb.append(chars[i]);
+            }
+        } 
+        System.out.println(sb);        
+    }
+}
+
+29. AngularJS and Angular Difference
+30.  ng build and ng serve  JIT compiler: what is angular cli
+31.  life Cycle hooks of angular, 
+32. Angular interpolation and property binding
+33. observables different from promises?
+34.  Data Sharing in component (parent - child, Child-parent)
