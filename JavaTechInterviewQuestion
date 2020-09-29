@@ -1,0 +1,95 @@
+Find missing numbers in an array of numbers without using any predefined API?
+Input: {6,9,3,5,1,7}
+Output: {2,4,8}
+
+Write a program to find all pairs of an array that sums up to a number K without using any predefined API?
+
+Given two lists of strings, find the items in one list or the other but not in both lists.
+
+Given a string, find the length of the longest substring without repeating characters.
+ 
+Implement method which raises x to the power of y. power(2, 3) should return 8. It should cover all scenarios like value of y being 0, being negative or x being a very big integer etc.
+
+Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase
+Example 1:
+Input: "Hello"
+Output: "hello"
+Example 2:
+Input: "here"
+Output: "here"
+Example 3:
+Input: "LOVELY"
+Output: "lovely”
+
+
+Given a string containing ‘0’, ‘1’ and ‘?’ wildcard characters, generate all binary strings that can be formed by replacing each wildcard character by ‘0’ or ‘1’.
+Example :
+Input str = "1??0?101"
+Output: 
+        10000101
+        10001101
+        10100101
+        10101101
+        11000101
+        11001101
+        11100101
+        11101101
+
+On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
+Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.
+Example 1:
+Input: cost = [10, 15, 20]
+Output: 15
+Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
+Example 2:
+Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+Output: 6
+Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
+Note:
+cost will have a length in the range [2, 1000].
+Every cost[i] will be an integer in the range [0, 999].
+
+
+Find the minimum length word from a given dictionary words, which has all the letters from the string licensePlate. Such a word is said to complete the given string licensePlate
+
+Here, for letters we ignore case. For example, "P" on the licensePlate still matches "p" on the word.
+
+It is guaranteed an answer exists. If there are multiple answers, return the one that occurs first in the array.
+
+The license plate might have the same letter occurring multiple times. For example, given a licensePlate of "PP", the word "pair" does not complete the licensePlate, but the word "supper" does.
+
+Example 1:
+Input: licensePlate = "1s3 PSt", words = ["step", "steps", "stripe", "stepple"]
+Output: "steps"
+Explanation: The smallest length word that contains the letters "S", "P", "S", and "T".
+Note that the answer is not "step", because the letter "s" must occur in the word twice.
+Also note that we ignored case for the purposes of comparing whether a letter exists in the word.
+Example 2:
+Input: licensePlate = "1s3 456", words = ["looks", "pest", "stew", "show"]
+Output: "pest"
+Explanation: There are 3 smallest length words that contains the letters "s".
+We return the one that occurred first.
+Note:
+licensePlate will be a string with length in range [1, 7].
+licensePlate will contain digits, spaces, or letters (uppercase or lowercase).
+words will have a length in the range [10, 1000].
+Every words[i] will consist of lowercase letters, and have length in range [1, 15].
+
+Given an array of 4 digits, return the largest 24 hour time that can be made.
+
+The smallest 24 hour time is 00:00, and the largest is 23:59. Starting from 00:00, a time is larger if more time has elapsed since midnight.
+
+Return the answer as a string of length 5. If no valid time can be made, return an empty string.
+Example 1:
+
+Input: [1,2,3,4]
+Output: "23:41"
+Example 2:
+
+Input: [5,5,5,5]
+Output: ""
+Note:
+
+A.length == 4
+0 <= A[i] <= 9
+
