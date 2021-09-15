@@ -1,0 +1,76 @@
+/**
+  1:- Num of lines
+  2:- Num of Characters
+  3:- Num of word 
+ */
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+
+public class FileInput {
+	public static void main(String args[]) throws FileNotFoundException
+	{
+		File file = new File("G://FileRead.txt"); 
+		Scanner fileScan=new Scanner(file);
+		FileInputStream fis = null;
+	    BufferedInputStream bis = null;
+	    DataInputStream dis = null;
+	    BufferedReader  br = new BufferedReader(new FileReader("G://FileRead.txt"));
+	    try{
+	    	
+	    	fis= new FileInputStream(file);
+	    	bis=new BufferedInputStream(fis);
+	    	dis=new DataInputStream(bis);
+	    	int count=0;
+	    	while( dis.available()!=0){
+	    		count++;
+	    		System.out.println(dis.readLine());
+	    	}    
+	    	System.out.println("Number of Lines in File :::"+count);
+	    	System.out.println("Number of Characters in file :::"+getCharCount(fileScan));
+	    	System.out.println("Number of Words in file :::"+wordCount(br));
+	    }
+	    catch (Exception e){
+	    	e.printStackTrace();
+	    }
+	}
+		private static long wordCount(BufferedReader br ) throws IOException{
+			int countWord = 0;
+			String lines = " ", str = " ";
+			while((lines=br.readLine())!=null ){
+				str =str+lines;
+				StringTokenizer strToken=new StringTokenizer(str);
+				while(strToken.hasMoreTokens()){
+					String s= strToken.nextToken();
+					countWord++;
+				}
+			}
+			return countWord;
+		}
+		
+		private static long getCharCount(Scanner file){
+			int countChar=0;
+			while(file.hasNext()){
+			String lines=file.nextLine();
+			for(int i=0;i<lines.length();i++){
+				countChar++;
+			}
+			}
+			return countChar;
+		}
+		
+		private static long getLineCount( DataInputStream dis){
+			int countLines=0;
+			return countLines;
+		}
+}
