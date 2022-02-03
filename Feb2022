@@ -1,0 +1,26 @@
+
+
+"yogi","vinoth","manish","shammi","vara","jayaram","manoj","yogi","sharan","manoj"
+
+create list>
+ignore  person with m names, count the ignore  person
+sort in accendind and descending
+return unique list
+
+
+reduce , filter, predicate
+
+HashMap Internal implementation
+6.ConcurrentHashMap ? internal implementation
+7.Follow up question – 
+we have 2 threads t1, t2, one is reading and other is updating the same ConcurrentHashMap, 
+now how you will make sure that reader thread must get updated value?
+
+4. Suppose we have Student class with properties “name” & “age” and we have implemented only hashCode() but not equals() methods. 
+ow we created two objects e1, e2 with same property value “ABC”, 20 respectively. 
+When we add them into HashMap then what will be the size of map?
+
+5. Follow up question, We have one object named e1 with value “ABC”, 20. We have added that object into HashMap (map.put(e1,”value”)), 
+now we change the value of name from “ABC” to “MNO” by e1.setName() and try to get the value by map.get(e1). Will it give “value” or null ?
+
+Given a string, e.g. foobar, you want to get the list of all suffixes of said string, e.g. ["r", "ar", "bar", "obar", "oobar", "foobar"]
