@@ -1,0 +1,48 @@
+/*
+1.Find out the first non-repeating character from the given array of String.
+Ex:
+Input : { "array", "apple", "rat", "character"}
+Output: y,a,r,h
+
+2. Write a program to print all possibilites to get the given number as mentioned below:
+Given number is 3.
+Output:
+  1+1+1
+  1+2
+  2+1
+*/
+
+import java.util.*;
+
+class FirstNonRepetiveSolution {
+  
+  public static char[] getFirstNonRepChars(List<String> list) {
+    //System.out.println("List "+list);
+    //provide your solution here
+        Set<String> slist = new HashSet<>();
+
+        char[] charArr =null;
+      for(String element: list){
+        
+        Arrays.sort(element.toCharArray());
+        char[] charArr =  new char[element.toCharArray().length];
+        
+        slist.add(element);
+      
+     }  
+      System.out.println(slist);
+
+    return null;
+  }
+
+  public static void main(String[] args) {
+    char [] res = getFirstNonRepChars(Arrays.asList("array", "apple", "rat", "character"));
+    
+    if(Arrays.compare(res, new char[]{'y','a','r', 'h'}) == 0){
+      System.out.println("Test Passed");
+    } else {
+      System.out.println("Test Failed");
+    }
+  }
+
+}
