@@ -1,24 +1,34 @@
 package com.bhasker.app;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.time.DayOfWeek;
 
 public class GetNonHolidayDate {
 
     private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
 
-    public static Date findNextNonHolidayDate(Date someDay, List<Date> holidayList) {
-        while (isHoliday(someDay, holidayList)) {
-            someDay = addOneDay(someDay);
+    public static boolean isWeekend(Date date) {
+        Instant instant = date.toInstant();
+        LocalDate localDate = instant.atZone(ZoneId.systemDefault()).toLocalDate();
+        DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+        return dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY;
+    }
+
+    public static Date findNextNonHolidayDate(Date pickupDate, List<Date> holidayList) {
+
+        while (isHoliday(pickupDate, holidayList)) {
+            pickupDate = addOneDay(pickupDate);
         }
-        return someDay;
+        return pickupDate;
     }
 
     private static boolean isHoliday(Date date, List<Date> holidayList) {
         for (Date holiday : holidayList) {
-            if (DATE_FORMATTER.format(date).equals(DATE_FORMATTER.format(holiday))) {
+            if (DATE_FORMATTER.format(date).equals(DATE_FORMATTER.format(holiday)) || isWeekend(date)) {
                 return true;
             }
         }
